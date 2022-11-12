@@ -28,7 +28,7 @@ const boxCounterSize = counterSize();
 const array = [];
 
 function createBoxes(amount) {
-  amount = Number(inputEl.value);
+  amount = inputEl.value;
 
   for (let i = 0; i < amount; i += 1) {
     const newEl = document.createElement('div');
@@ -39,6 +39,7 @@ function createBoxes(amount) {
     array.push(newEl);
 
     boxesEl.append(...array);
+    array.splice(0);
   }
   // console.log(boxesEl);
 }
@@ -46,6 +47,7 @@ function createBoxes(amount) {
 function destroyBoxes() {
   boxesEl.innerHTML = '';
   inputEl.value = '';
+  array.splice(0);
 }
 
 createEl.addEventListener('click', createBoxes);

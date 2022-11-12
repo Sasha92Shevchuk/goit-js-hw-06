@@ -17,13 +17,14 @@ const galleryEl = document.querySelector('.gallery');
 console.log(galleryEl);
 
 const makeImgMarkup = ({ url, alt }) => {
-  return `<li class = 'item'> <img src = ${url} alt = ${alt} width = 100> </li>`;
+  return `<li class = 'item'> <img src = '${url}' alt = '${alt}' width = 100> </li>`;
 };
 
 const makeImgRows = images.map(makeImgMarkup).join('');
 
 galleryEl.insertAdjacentHTML('beforeend', makeImgRows);
 
+// long decides
 // const adressImages = images.map(image => image.url);
 // // console.log(adressImages);
 // const descriptionImages = images.map(image => image.alt);
