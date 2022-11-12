@@ -16,24 +16,29 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-function counterSize() {
-  let count = 20;
-  return function () {
-    count += 10;
-    return count;
-  };
-}
-const boxCounterSize = counterSize();
+// function counterSize() {
+//   let count = 20;
+//   return function () {
+//     count += 10;
+//     return count;
+//   };
+// }
+// const boxCounterSize = counterSize();
+
+// функція запамятовувала попердній розмір
+// і після скидання будувала розміри не з початкових 30px
 
 const array = [];
+const startWidth = 30;
+const startHeight = 30;
 
 function createBoxes(amount) {
   amount = inputEl.value;
 
   for (let i = 0; i < amount; i += 1) {
     const newEl = document.createElement('div');
-    newEl.style.width = boxCounterSize() + 'px';
-    newEl.style.height = newEl.style.width;
+    newEl.style.width = startWidth + 10 * i + 'px';
+    newEl.style.height = startHeight + 10 * i + 'px';
 
     newEl.style.backgroundColor = getRandomHexColor();
     array.push(newEl);
